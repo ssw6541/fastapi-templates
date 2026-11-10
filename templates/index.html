@@ -1,18 +1,22 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="/static/css/style.css" />
-    <script src="/static/js/app.js" defer></script>
-  </head>
-  <body>
-    <h1 class="title">jinja 테스트 {{ username }}</h1>
-
-    {% for item in items %}
-    <p>{{ item }}</p>
-    {% endfor %}
-    <img src="/static/img/sample1.jpg" alt="샘플 이미지" />
-  </body>
-</html>
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>마켓노트 — 내 손안의 마켓 보드</title>
+  <meta name="description" content="국내 주식시장의 흐름과 관심 종목을 살펴보세요.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/css/style.css"><script src="/static/js/app.js" defer></script>
+</head>
+<body>
+<header class="topbar"><div class="shell nav"><a class="brand" href="/" aria-label="마켓노트 홈"><span class="logo">m<span>.</span></span><span>marketnote<small>MARKET BOARD</small></span></a><div class="nav-right"><span class="source"><i></i> NAVER FINANCE</span><a href="#watchlist" class="nav-link">종목 둘러보기 <span>↗</span></a></div></div></header>
+<main class="shell">
+  <section class="hero"><div class="hero-copy"><div class="eyebrow"><span class="eyebrow-dot"></span> YOUR MARKET, AT A GLANCE</div><h1>오늘의 시장을<br><span>내 방식대로.</span></h1><p>흩어진 숫자 대신, 궁금한 흐름부터.<br>나만의 관심 종목을 담아 시장을 살펴보세요.</p><a href="#watchlist" class="hero-button">종목 살펴보기 <span>↘</span></a></div><div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orb orb-one">✳</div><div class="orb orb-two">↗</div><div class="art-card"><span>MARKET SNAPSHOT</span><strong>Make sense<br>of the market<span>.</span></strong><div class="art-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><small>THE BIG PICTURE, MADE SIMPLE</small></div><div class="art-tag"><span>✦</span> A LITTLE MORE CLARITY</div></div><div class="hero-bottom"><span>01 / THE DAILY OVERVIEW</span><span>SCROLL TO EXPLORE ↓</span></div></section>
+  <section class="overview" aria-labelledby="market-title"><div class="section-head"><div><div class="kicker"><span>01</span> MARKET PULSE</div><h2 id="market-title">오늘의 시장 <span>어디로 움직이고 있을까요?</span></h2></div><div class="update"><span class="live-dot"></span><span id="updated">시세를 불러오는 중</span><button id="refresh" class="refresh" type="button" aria-label="시세 새로고침" title="시세 새로고침">↻</button></div></div><div id="indices" class="indices"><div class="index-card loading">시장 지수를 불러오고 있습니다.</div></div></section>
+  <section class="watchlist" id="watchlist" aria-labelledby="stocks-title"><div class="section-head stock-head"><div><div class="kicker"><span>02</span> YOUR WATCHLIST</div><h2 id="stocks-title">종목 탐색 <span>관심 가는 종목을 골라보세요.</span></h2></div><div class="search-wrap"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="종목명 또는 코드 검색" aria-label="종목명 또는 종목코드 검색"><kbd>/</kbd></div></div>
+  <div class="table-panel"><div class="table-top"><div class="tabs" role="group" aria-label="시장 필터"><button class="tab active" data-market="all" aria-pressed="true">전체 <span id="count-all">—</span></button><button class="tab" data-market="KOSPI" aria-pressed="false">코스피</button><button class="tab" data-market="KOSDAQ" aria-pressed="false">코스닥</button><button class="tab favorite-tab" data-market="favorites" aria-pressed="false">★ 관심 <span id="favorite-count">0</span></button></div><label class="sort-label">정렬 <select id="sort" aria-label="종목 정렬"><option value="default">기본순</option><option value="up">상승률 높은순</option><option value="down">하락률 높은순</option><option value="volume">거래량 많은순</option><option value="name">이름순</option></select></label></div><div id="status" class="status" role="status" hidden></div><div class="table-scroll"><table><thead><tr><th>관심</th><th>종목명</th><th>현재가</th><th>전일 대비</th><th>등락률</th><th>거래량</th><th><span class="sr-only">상세</span></th></tr></thead><tbody id="stocks"><tr><td colspan="7" class="empty">시세를 불러오고 있습니다.</td></tr></tbody></table></div><div class="table-footer"><span><i></i> 종목을 선택하면 자세한 시세를 볼 수 있어요.</span><span>대표 종목 기준 · 시세는 지연될 수 있습니다.</span></div></div></section>
+  <section class="endnote"><div><span>MAKE THE MARKET YOURS</span><strong>한 걸음 더 가까워진 시장.</strong></div><a href="https://finance.naver.com/" target="_blank" rel="noopener noreferrer">네이버 증권에서 더 보기 ↗</a></section>
+  <footer><a class="footer-brand" href="/">m<span>.</span> marketnote</a><p>네이버 증권 제공 시세 · 투자 참고용 정보입니다.</p><span>© MARKETNOTE</span></footer>
+</main>
+<dialog id="detail" aria-labelledby="detail-name"><div class="dialog-head"><span>STOCK DETAILS <i>✳</i></span><button id="close-detail" type="button" aria-label="상세창 닫기">×</button></div><div id="detail-content"></div></dialog>
+</body></html>
